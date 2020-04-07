@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# sh refine-geom list-of-files geom-file
+
+na=$(echo "$1" | cut -f 1 -d '.') 
+ge=$(echo "$2" | cut -f 1 -d '.') 
+
+
+python detector-shift $na.stream $2
+
+#geoptimiser -i $na.stream -g $ge-predrefine.geom -q myrg -c myrg -s -o refined.geom
